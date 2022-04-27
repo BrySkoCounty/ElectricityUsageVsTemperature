@@ -16,7 +16,7 @@ ElectricBill<-read_csv("ElectricBill.csv", col_types="Dnnn")
 
 
 ElectricBill$Date<-ElectricBill$Date %m-% months(1)
-ElectricBill$Date<-ElectricBill$Date + dweeks(2)
+ElectricBill$Date<-ElectricBill$Date - dweeks(2)
 
 #Merging was performed in order to display both of the dataframes in a single plot
 allData <- merge(Temperatures, ElectricBill, by = 'Date', all.x=TRUE)
